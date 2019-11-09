@@ -19,6 +19,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     //location
     @IBOutlet weak var locationDisplay: UILabel!
     
+    @IBAction func LongPress(_ sender: Any) {
+    }
     
     let location = CLLocationManager()
     let motion = CMMotionManager()

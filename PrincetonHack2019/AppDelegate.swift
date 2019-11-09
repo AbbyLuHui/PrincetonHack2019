@@ -22,20 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: UISceneSession Lifecycle
     
-    func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-      if let tabBarController = window?.rootViewController as? UITabBarController,
-        let viewControllers = tabBarController.viewControllers
-      {
-        for viewController in viewControllers {
-          if let fetchViewController = viewController as? FetchViewController {
-            fetchViewController.fetch {
-              fetchViewController.updateUI()
-              completionHandler(.newData)
-            }
-          }
-        }
-      }
-    }
+
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.
