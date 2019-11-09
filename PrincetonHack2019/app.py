@@ -15,16 +15,17 @@ app = Flask(__name__)
 def success(name):
    return 'welcome %s' % name
 
-@app.route('/login',methods = ['POST', 'GET'])
+@app.route('/login/',methods = ['POST', 'GET'])
 def login():
     if request.method == 'POST': 
-        user = request.form['nm']     
+        user = request.form['emergency']
+        print("HAHA you are good.")
         return redirect(url_for('success',name = user))
     else:
-        user = request.args.get('nm')
+        user = request.args.get('')
         name1 = str(user)
-        account_sid = ''
-        auth_token = ''
+        account_sid = 'AC102092b89629bd04c1bb77a847531075'
+        auth_token = 'f69ea2ad3172f786ff3f3e60c69d4934'
         client = Client(account_sid, auth_token)
         call = client.calls.create(url='http://demo.twilio.com/docs/voice.xml', to=name1, from_='+12562696834')
         print(call.sid)
