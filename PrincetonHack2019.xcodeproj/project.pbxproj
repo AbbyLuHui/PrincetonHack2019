@@ -37,7 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A530F0062376734600F0E7BB /* PrincetonHack2019.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrincetonHack2019.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A530F0062376734600F0E7BB /* Helderly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Helderly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A530F0092376734600F0E7BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A530F00B2376734600F0E7BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A530F00D2376734600F0E7BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 		A530F0072376734600F0E7BB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A530F0062376734600F0E7BB /* PrincetonHack2019.app */,
+				A530F0062376734600F0E7BB /* Helderly.app */,
 				A530F01F2376735200F0E7BB /* PrincetonHack2019Tests.xctest */,
 				A530F02A2376735200F0E7BB /* PrincetonHack2019UITests.xctest */,
 			);
@@ -160,7 +160,7 @@
 			);
 			name = PrincetonHack2019;
 			productName = PrincetonHack2019;
-			productReference = A530F0062376734600F0E7BB /* PrincetonHack2019.app */;
+			productReference = A530F0062376734600F0E7BB /* Helderly.app */;
 			productType = "com.apple.product-type.application";
 		};
 		A530F01E2376735200F0E7BB /* PrincetonHack2019Tests */ = {
@@ -458,9 +458,9 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = LH.PrincetonHack2019;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Helderly;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -476,9 +476,9 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = LH.PrincetonHack2019;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Helderly;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

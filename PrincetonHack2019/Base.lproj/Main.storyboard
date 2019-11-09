@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Map-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PrincetonHack2019" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Map" id="BYZ-38-t0r" customClass="ViewController" customModule="PrincetonHack2019" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -40,10 +40,10 @@
             </objects>
             <point key="canvasLocation" x="677" y="880"/>
         </scene>
-        <!--View Controller-->
+        <!--Intro-->
         <scene sceneID="h0d-va-BHU">
             <objects>
-                <viewController id="Xkc-Pp-bdV" sceneMemberID="viewController">
+                <viewController title="Intro" id="Xkc-Pp-bdV" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5j5-a5-sEU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -127,10 +127,10 @@
             </objects>
             <point key="canvasLocation" x="676.81159420289862" y="114.50892857142857"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile-->
         <scene sceneID="qmH-u9-y1S">
             <objects>
-                <viewController id="a22-HP-0ci" sceneMemberID="viewController">
+                <viewController title="Profile" id="a22-HP-0ci" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FM0-Ys-ppX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -240,20 +240,20 @@
             </objects>
             <point key="canvasLocation" x="1440.5797101449277" y="114.50892857142857"/>
         </scene>
-        <!--View Controller-->
+        <!--Emergency-->
         <scene sceneID="HtT-6h-cVX">
             <objects>
-                <viewController id="ydE-iz-c51" sceneMemberID="viewController">
+                <viewController title="Emergency" id="ydE-iz-c51" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fA0-K9-KfK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="svD-BF-x1w">
-                                <rect key="frame" x="107" y="321.5" width="200" height="199"/>
+                                <rect key="frame" x="82" y="296.5" width="250" height="249"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="XJh-zw-Qw1"/>
-                                    <constraint firstAttribute="width" constant="200" id="lsb-yS-3BZ"/>
+                                    <constraint firstAttribute="height" constant="250" id="XJh-zw-Qw1"/>
+                                    <constraint firstAttribute="width" constant="250" id="lsb-yS-3BZ"/>
                                 </constraints>
                                 <color key="tintColor" red="0.80000000000000004" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" backgroundImage="exclamationmark.circle.fill" catalog="system"/>
@@ -276,7 +276,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wz7-0X-UsN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Sjb-FH-6lz" userLabel="Exit" sceneMemberID="exit"/>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="Vzm-PC-8xC"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.59999999999999998" id="Vzm-PC-8xC"/>
             </objects>
             <point key="canvasLocation" x="2238" y="115"/>
         </scene>
@@ -284,7 +284,7 @@
     <resources>
         <image name="background" width="1063" height="1913.5"/>
         <image name="exclamationmark.circle.fill" catalog="system" width="64" height="60"/>
-        <image name="icon" width="107.5" height="107.5"/>
+        <image name="icon" width="60" height="60"/>
         <image name="location.fill" catalog="system" width="64" height="56"/>
         <image name="person.crop.circle" catalog="system" width="64" height="60"/>
     </resources>
