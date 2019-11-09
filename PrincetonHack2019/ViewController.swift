@@ -22,6 +22,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     let location = CLLocationManager()
     let motion = CMMotionManager()
+    var accelerometerUpdateInterval: TimeInterval { 1 }
+
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         //let location = locations[0]
@@ -29,11 +31,44 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             print("New location: \(location.coordinate) ")
         }
     }
-    func startAccelerometerUpdates(to queue: OperationQueue, withHandler handler: @escaping CMAccelerometerHandler){
-        if self.motion.isAccelerometerAvailable{
-            self.motion.accelerometerUpdateInterval = 1.0 / 100.0
-            
+    
+    @IBAction func enabledChanged(_ sender: UISwitch) {
+      if sender.isOn {
+        location.startUpdatingLocation()
+      } else {
+        location.stopUpdatingLocation()
+      }
+    }
+    
+    @IBAction func accuracyChanged(_ sender: UISegmentedControl) {
+      let accuracyValues = [
+        kCLLocationAccuracyBestForNavigation,
+        kCLLocationAccuracyBest,
+        kCLLocationAccuracyNearestTenMeters,
+        kCLLocationAccuracyHundredMeters,
+        kCLLocationAccuracyKilometer,
+        kCLLocationAccuracyThreeKilometers]
+      
+      location.desiredAccuracy = accuracyValues[sender.selectedSegmentIndex];
+    }
+    
+    func startAccelerometers() {
+       // Make sure the accelerometer hardware is available.
+       if self.motion.isAccelerometerAvailable {
+        self.motion.accelerometerUpdateInterval = 1.0 / 60.0  // 60 Hz
+        self.motion.startAccelerometerUpdates(to: OperationQueue.current!){(data, error) in
+            print(data as Any)
+            if let trueData = data{
+                self.view.reloadInputViews()
+                let x = trueData.acceleration.x
+                let y = trueData.acceleration.y
+                let z = trueData.acceleration.z
+                print(x)
+                print(y)
+                print(z)
+            }
         }
+       }
     }
     
     override func viewDidLoad() {
@@ -44,6 +79,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         location.requestAlwaysAuthorization()
         location.startUpdatingLocation()
         location.allowsBackgroundLocationUpdates = true
+        startAccelerometers()
     }
     
     override func didReceiveMemoryWarning() {
