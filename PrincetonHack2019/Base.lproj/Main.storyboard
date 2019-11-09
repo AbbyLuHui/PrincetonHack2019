@@ -67,6 +67,9 @@
                                     <color key="titleColor" red="0.80000000000000004" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.80000000000000004" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="ydE-iz-c51" kind="show" id="wia-ow-S1y"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="aV8-Wc-eLX">
                                 <rect key="frame" x="107" y="204" width="200" height="200"/>
@@ -167,7 +170,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AHq-Ai-fep">
-                                <rect key="frame" x="60" y="659" width="300" height="35"/>
+                                <rect key="frame" x="60" y="666" width="300" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="8UK-aw-dM2"/>
                                     <constraint firstAttribute="width" constant="300" id="yic-al-6oh"/>
@@ -242,11 +245,11 @@
             <objects>
                 <viewController id="ydE-iz-c51" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fA0-K9-KfK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="svD-BF-x1w">
-                                <rect key="frame" x="107" y="348.5" width="200" height="199"/>
+                                <rect key="frame" x="107" y="321.5" width="200" height="199"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="XJh-zw-Qw1"/>
@@ -256,6 +259,7 @@
                                 <state key="normal" backgroundImage="exclamationmark.circle.fill" catalog="system"/>
                                 <connections>
                                     <action selector="LongPress:" destination="Sjb-FH-6lz" eventType="touchUpInside" id="3Ol-c4-AP6"/>
+                                    <action selector="longPressButton:" destination="Sjb-FH-6lz" eventType="touchUpInside" id="hQI-tB-uey"/>
                                     <outletCollection property="gestureRecognizers" destination="Vzm-PC-8xC" appends="YES" id="6f5-Bz-ULN"/>
                                 </connections>
                             </button>
@@ -268,6 +272,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ol5-Dd-h1g"/>
                     </view>
+                    <navigationItem key="navigationItem" id="kdI-lU-VoH"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wz7-0X-UsN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Sjb-FH-6lz" userLabel="Exit" sceneMemberID="exit"/>

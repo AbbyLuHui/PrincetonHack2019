@@ -19,7 +19,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     //location
     @IBOutlet weak var locationDisplay: UILabel!
     
-    @IBAction func LongPress(_ sender: Any) {
+
+    @IBAction func longPressButton(_ sender: UIButton)
+    {
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressAction))
+        self.view.addGestureRecognizer(longPress)
+    }
+    
+    @objc func longPressAction(){
+        print("long press detected")
+        
     }
     
     let location = CLLocationManager()
