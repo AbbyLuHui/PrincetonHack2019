@@ -1,0 +1,624 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A530F00A2376734600F0E7BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A530F0092376734600F0E7BB /* AppDelegate.swift */; };
+		A530F00C2376734600F0E7BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A530F00B2376734600F0E7BB /* SceneDelegate.swift */; };
+		A530F00E2376734600F0E7BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A530F00D2376734600F0E7BB /* ViewController.swift */; };
+		A530F0112376734600F0E7BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A530F00F2376734600F0E7BB /* Main.storyboard */; };
+		A530F0142376734600F0E7BB /* PrincetonHack2019.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A530F0122376734600F0E7BB /* PrincetonHack2019.xcdatamodeld */; };
+		A530F0162376735200F0E7BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A530F0152376735200F0E7BB /* Assets.xcassets */; };
+		A530F0192376735200F0E7BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A530F0172376735200F0E7BB /* LaunchScreen.storyboard */; };
+		A530F0242376735200F0E7BB /* PrincetonHack2019Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A530F0232376735200F0E7BB /* PrincetonHack2019Tests.swift */; };
+		A530F02F2376735200F0E7BB /* PrincetonHack2019UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A530F02E2376735200F0E7BB /* PrincetonHack2019UITests.swift */; };
+		A530F03E2376737B00F0E7BB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A530F03D2376737A00F0E7BB /* CoreLocation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A530F0202376735200F0E7BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A530EFFE2376734600F0E7BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A530F0052376734600F0E7BB;
+			remoteInfo = PrincetonHack2019;
+		};
+		A530F02B2376735200F0E7BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A530EFFE2376734600F0E7BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A530F0052376734600F0E7BB;
+			remoteInfo = PrincetonHack2019;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A530F0062376734600F0E7BB /* PrincetonHack2019.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrincetonHack2019.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A530F0092376734600F0E7BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A530F00B2376734600F0E7BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A530F00D2376734600F0E7BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A530F0102376734600F0E7BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A530F0132376734600F0E7BB /* PrincetonHack2019.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PrincetonHack2019.xcdatamodel; sourceTree = "<group>"; };
+		A530F0152376735200F0E7BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A530F0182376735200F0E7BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A530F01A2376735200F0E7BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A530F01F2376735200F0E7BB /* PrincetonHack2019Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrincetonHack2019Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A530F0232376735200F0E7BB /* PrincetonHack2019Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrincetonHack2019Tests.swift; sourceTree = "<group>"; };
+		A530F0252376735200F0E7BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A530F02A2376735200F0E7BB /* PrincetonHack2019UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrincetonHack2019UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A530F02E2376735200F0E7BB /* PrincetonHack2019UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrincetonHack2019UITests.swift; sourceTree = "<group>"; };
+		A530F0302376735200F0E7BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A530F03D2376737A00F0E7BB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A530F0032376734600F0E7BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A530F03E2376737B00F0E7BB /* CoreLocation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A530F01C2376735200F0E7BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A530F0272376735200F0E7BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A530EFFD2376734600F0E7BB = {
+			isa = PBXGroup;
+			children = (
+				A530F0082376734600F0E7BB /* PrincetonHack2019 */,
+				A530F0222376735200F0E7BB /* PrincetonHack2019Tests */,
+				A530F02D2376735200F0E7BB /* PrincetonHack2019UITests */,
+				A530F0072376734600F0E7BB /* Products */,
+				A530F03C2376737A00F0E7BB /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A530F0072376734600F0E7BB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A530F0062376734600F0E7BB /* PrincetonHack2019.app */,
+				A530F01F2376735200F0E7BB /* PrincetonHack2019Tests.xctest */,
+				A530F02A2376735200F0E7BB /* PrincetonHack2019UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A530F0082376734600F0E7BB /* PrincetonHack2019 */ = {
+			isa = PBXGroup;
+			children = (
+				A530F0092376734600F0E7BB /* AppDelegate.swift */,
+				A530F00B2376734600F0E7BB /* SceneDelegate.swift */,
+				A530F00D2376734600F0E7BB /* ViewController.swift */,
+				A530F00F2376734600F0E7BB /* Main.storyboard */,
+				A530F0152376735200F0E7BB /* Assets.xcassets */,
+				A530F0172376735200F0E7BB /* LaunchScreen.storyboard */,
+				A530F01A2376735200F0E7BB /* Info.plist */,
+				A530F0122376734600F0E7BB /* PrincetonHack2019.xcdatamodeld */,
+			);
+			path = PrincetonHack2019;
+			sourceTree = "<group>";
+		};
+		A530F0222376735200F0E7BB /* PrincetonHack2019Tests */ = {
+			isa = PBXGroup;
+			children = (
+				A530F0232376735200F0E7BB /* PrincetonHack2019Tests.swift */,
+				A530F0252376735200F0E7BB /* Info.plist */,
+			);
+			path = PrincetonHack2019Tests;
+			sourceTree = "<group>";
+		};
+		A530F02D2376735200F0E7BB /* PrincetonHack2019UITests */ = {
+			isa = PBXGroup;
+			children = (
+				A530F02E2376735200F0E7BB /* PrincetonHack2019UITests.swift */,
+				A530F0302376735200F0E7BB /* Info.plist */,
+			);
+			path = PrincetonHack2019UITests;
+			sourceTree = "<group>";
+		};
+		A530F03C2376737A00F0E7BB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A530F03D2376737A00F0E7BB /* CoreLocation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A530F0052376734600F0E7BB /* PrincetonHack2019 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A530F0332376735200F0E7BB /* Build configuration list for PBXNativeTarget "PrincetonHack2019" */;
+			buildPhases = (
+				A530F0022376734600F0E7BB /* Sources */,
+				A530F0032376734600F0E7BB /* Frameworks */,
+				A530F0042376734600F0E7BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PrincetonHack2019;
+			productName = PrincetonHack2019;
+			productReference = A530F0062376734600F0E7BB /* PrincetonHack2019.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A530F01E2376735200F0E7BB /* PrincetonHack2019Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A530F0362376735200F0E7BB /* Build configuration list for PBXNativeTarget "PrincetonHack2019Tests" */;
+			buildPhases = (
+				A530F01B2376735200F0E7BB /* Sources */,
+				A530F01C2376735200F0E7BB /* Frameworks */,
+				A530F01D2376735200F0E7BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A530F0212376735200F0E7BB /* PBXTargetDependency */,
+			);
+			name = PrincetonHack2019Tests;
+			productName = PrincetonHack2019Tests;
+			productReference = A530F01F2376735200F0E7BB /* PrincetonHack2019Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A530F0292376735200F0E7BB /* PrincetonHack2019UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A530F0392376735200F0E7BB /* Build configuration list for PBXNativeTarget "PrincetonHack2019UITests" */;
+			buildPhases = (
+				A530F0262376735200F0E7BB /* Sources */,
+				A530F0272376735200F0E7BB /* Frameworks */,
+				A530F0282376735200F0E7BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A530F02C2376735200F0E7BB /* PBXTargetDependency */,
+			);
+			name = PrincetonHack2019UITests;
+			productName = PrincetonHack2019UITests;
+			productReference = A530F02A2376735200F0E7BB /* PrincetonHack2019UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A530EFFE2376734600F0E7BB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1110;
+				LastUpgradeCheck = 1110;
+				ORGANIZATIONNAME = LuHui;
+				TargetAttributes = {
+					A530F0052376734600F0E7BB = {
+						CreatedOnToolsVersion = 11.1;
+					};
+					A530F01E2376735200F0E7BB = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = A530F0052376734600F0E7BB;
+					};
+					A530F0292376735200F0E7BB = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = A530F0052376734600F0E7BB;
+					};
+				};
+			};
+			buildConfigurationList = A530F0012376734600F0E7BB /* Build configuration list for PBXProject "PrincetonHack2019" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A530EFFD2376734600F0E7BB;
+			productRefGroup = A530F0072376734600F0E7BB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A530F0052376734600F0E7BB /* PrincetonHack2019 */,
+				A530F01E2376735200F0E7BB /* PrincetonHack2019Tests */,
+				A530F0292376735200F0E7BB /* PrincetonHack2019UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A530F0042376734600F0E7BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A530F0192376735200F0E7BB /* LaunchScreen.storyboard in Resources */,
+				A530F0162376735200F0E7BB /* Assets.xcassets in Resources */,
+				A530F0112376734600F0E7BB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A530F01D2376735200F0E7BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A530F0282376735200F0E7BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A530F0022376734600F0E7BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A530F00E2376734600F0E7BB /* ViewController.swift in Sources */,
+				A530F00A2376734600F0E7BB /* AppDelegate.swift in Sources */,
+				A530F00C2376734600F0E7BB /* SceneDelegate.swift in Sources */,
+				A530F0142376734600F0E7BB /* PrincetonHack2019.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A530F01B2376735200F0E7BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A530F0242376735200F0E7BB /* PrincetonHack2019Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A530F0262376735200F0E7BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A530F02F2376735200F0E7BB /* PrincetonHack2019UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A530F0212376735200F0E7BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A530F0052376734600F0E7BB /* PrincetonHack2019 */;
+			targetProxy = A530F0202376735200F0E7BB /* PBXContainerItemProxy */;
+		};
+		A530F02C2376735200F0E7BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A530F0052376734600F0E7BB /* PrincetonHack2019 */;
+			targetProxy = A530F02B2376735200F0E7BB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A530F00F2376734600F0E7BB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A530F0102376734600F0E7BB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A530F0172376735200F0E7BB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A530F0182376735200F0E7BB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A530F0312376735200F0E7BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A530F0322376735200F0E7BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A530F0342376735200F0E7BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2UBW72HX8H;
+				INFOPLIST_FILE = PrincetonHack2019/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = LH.PrincetonHack2019;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A530F0352376735200F0E7BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2UBW72HX8H;
+				INFOPLIST_FILE = PrincetonHack2019/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = LH.PrincetonHack2019;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A530F0372376735200F0E7BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2UBW72HX8H;
+				INFOPLIST_FILE = PrincetonHack2019Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = LH.PrincetonHack2019Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PrincetonHack2019.app/PrincetonHack2019";
+			};
+			name = Debug;
+		};
+		A530F0382376735200F0E7BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2UBW72HX8H;
+				INFOPLIST_FILE = PrincetonHack2019Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = LH.PrincetonHack2019Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PrincetonHack2019.app/PrincetonHack2019";
+			};
+			name = Release;
+		};
+		A530F03A2376735200F0E7BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2UBW72HX8H;
+				INFOPLIST_FILE = PrincetonHack2019UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = LH.PrincetonHack2019UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PrincetonHack2019;
+			};
+			name = Debug;
+		};
+		A530F03B2376735200F0E7BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2UBW72HX8H;
+				INFOPLIST_FILE = PrincetonHack2019UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = LH.PrincetonHack2019UITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PrincetonHack2019;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A530F0012376734600F0E7BB /* Build configuration list for PBXProject "PrincetonHack2019" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A530F0312376735200F0E7BB /* Debug */,
+				A530F0322376735200F0E7BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A530F0332376735200F0E7BB /* Build configuration list for PBXNativeTarget "PrincetonHack2019" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A530F0342376735200F0E7BB /* Debug */,
+				A530F0352376735200F0E7BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A530F0362376735200F0E7BB /* Build configuration list for PBXNativeTarget "PrincetonHack2019Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A530F0372376735200F0E7BB /* Debug */,
+				A530F0382376735200F0E7BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A530F0392376735200F0E7BB /* Build configuration list for PBXNativeTarget "PrincetonHack2019UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A530F03A2376735200F0E7BB /* Debug */,
+				A530F03B2376735200F0E7BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A530F0122376734600F0E7BB /* PrincetonHack2019.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A530F0132376734600F0E7BB /* PrincetonHack2019.xcdatamodel */,
+			);
+			currentVersion = A530F0132376734600F0E7BB /* PrincetonHack2019.xcdatamodel */;
+			path = PrincetonHack2019.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = A530EFFE2376734600F0E7BB /* Project object */;
+}
