@@ -92,7 +92,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
             print(jsonData)
-            let url = NSURL(string: "http://10.25.3.190/location/")!
+            let url = NSURL(string: "http://10.25.3.190/\(domain)/")!
             
             let request = NSMutableURLRequest(url: url as URL)
             request.httpMethod = "POST"
@@ -107,7 +107,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                     return
                 }
                 do {
-                    print("HERE")
                     let result = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String:AnyObject]
                     print ("Result -> \(String(describing: result))")
                     
