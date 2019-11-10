@@ -33,8 +33,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             let latitude_diff = Double(location.coordinate.latitude) - ViewController.home_latitude
             let longitude_diff = Double(location.coordinate.longitude) - ViewController.home_latitude
             if (abs(latitude_diff) > 0.01 || abs(longitude_diff) > 0.01) && called{
-                let coordinate = String(location.coordinate.latitude).prefix(10)+","+String(location.coordinate.longitude).prefix(10)
-                self.alertFamily(domain: "text", input: ["coordinate":String(coordinate)], completion: printCompletion(input:))
+                //let coordinate = String(location.coordinate.latitude).prefix(10)+","+String(location.coordinate.longitude).prefix(10)
+                self.alertFamily(domain: "text", input: ["latitude":String(location.coordinate.latitude), "longitude":String(location.coordinate.longitude)], completion: printCompletion(input:))
                 called=false;
             }
             if abs(latitude_diff) < 0.01 || abs(longitude_diff) < 0.01 {
@@ -63,10 +63,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
       location.desiredAccuracy = accuracyValues[sender.selectedSegmentIndex];
     }
     
+
     func startAccelerometers() {
        // Make sure the accelerometer hardware is available.
        if self.motion.isAccelerometerAvailable {
-        self.motion.accelerometerUpdateInterval = 1.0 / 60.0  // 60 Hz
+        self.motion.accelerometerUpdateInterval = 1.0/20.0   // 60 Hz
         self.motion.startAccelerometerUpdates(to: OperationQueue.current!){(data, error) in
             if let trueData = data{
                 self.view.reloadInputViews()
@@ -75,6 +76,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
                 let z = trueData.acceleration.z
                 if abs(x)>3 || abs(y)>3 || abs(z)>3{
                     self.alertFamily(domain: "call", input: ["phoneNumber":"Out of zone"], completion: self.printCompletion(input:))
+                    
                 }
             }
         }
@@ -106,8 +108,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
                     let result = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String:AnyObject]
                     print ("Result -> \(String(describing: result))")
                     
-                    // retrieving video from firebase and showing on screen
-                    
                     completion("Result -> \(String(describing: result))")
                 } catch {
                     completion("Error2 -> \(error)")
@@ -123,13 +123,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         print("successfully send message / call with \(input)")
     }
     
-<<<<<<< HEAD
 
-    
-
-    //var longGesture = UILongPressGestureRecognizer()
-=======
->>>>>>> 5049bab2ea8dc8a3f8381e6f29302b5accce523e
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -142,23 +136,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         location.startUpdatingLocation()
         location.allowsBackgroundLocationUpdates = true
         startAccelerometers()
-<<<<<<< HEAD
-        //longGesture = UILongPressGestureRecognizer(target: self, action: #selector(ViewController.longPress(_:)))
-        //longPress.addGestureRecognizer(longGesture)
     }
-    
-   // @IBAction func longPress(_ sender: UILongPressGestureRecognizer) {
-     //   let alertController = UIAlertController(title: "Emergency", message: "Emergency action dismissed", preferredStyle: .alert)
-       // let ok = UIAlertAction(title: "OK", style: .default){(alert) in}
-       // alertController.addAction(ok)
-      //  self.present(alertController, animated: true, completion: nil)
-   // }
-    
-=======
-
-    }
-
->>>>>>> 5049bab2ea8dc8a3f8381e6f29302b5accce523e
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

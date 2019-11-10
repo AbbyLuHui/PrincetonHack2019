@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xkc-Pp-bdV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xkc-Pp-bdV">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -88,11 +88,8 @@
                                     <color key="titleShadowColor" red="0.80000000000000004" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-<<<<<<< HEAD
-                                    <segue destination="ydE-iz-c51" kind="show" id="Z92-8J-w8K"/>
-=======
+                                    <action selector="SOS" destination="Xkc-Pp-bdV" eventType="touchUpInside" id="u5Z-eJ-8b3"/>
                                     <segue destination="6Tg-ne-aQb" kind="show" id="2wq-XF-ec5"/>
->>>>>>> 5049bab2ea8dc8a3f8381e6f29302b5accce523e
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="aV8-Wc-eLX">
@@ -281,16 +278,8 @@
         <!--Second View Controller-->
         <scene sceneID="JWF-aU-xg5">
             <objects>
-<<<<<<< HEAD
-                <exit id="rwR-5u-w7q" userLabel="Exit" sceneMemberID="exit"/>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="YPG-fI-rbo"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wz7-0X-UsN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewController title="Emergency" id="ydE-iz-c51" customClass="ViewController" customModule="Helderly" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="fA0-K9-KfK">
-=======
                 <viewController id="zFk-S4-v1Z" customClass="SecondViewController" customModule="Helderly" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VKs-4x-WXu">
->>>>>>> 5049bab2ea8dc8a3f8381e6f29302b5accce523e
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -355,11 +344,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="u8M-hR-7GP"/>
                     </view>
-<<<<<<< HEAD
-                    <navigationItem key="navigationItem" id="WN6-8v-Oos"/>
-=======
                     <navigationItem key="navigationItem" id="tWZ-vY-h8F"/>
->>>>>>> 5049bab2ea8dc8a3f8381e6f29302b5accce523e
                     <connections>
                         <outlet property="ageDisp" destination="spF-uy-NNX" id="kC5-Yx-kMh"/>
                         <outlet property="conditionDisp" destination="QVQ-bJ-w8j" id="fZs-IL-txR"/>
@@ -367,10 +352,7 @@
                         <outlet property="nameDisp" destination="h1j-e7-Maz" id="Ri1-Zf-VMX"/>
                     </connections>
                 </viewController>
-<<<<<<< HEAD
-=======
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OjN-cq-ry3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
->>>>>>> 5049bab2ea8dc8a3f8381e6f29302b5accce523e
             </objects>
             <point key="canvasLocation" x="2726.0869565217395" y="-627.45535714285711"/>
         </scene>
