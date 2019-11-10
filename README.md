@@ -42,10 +42,10 @@ Getting the Twilio interface to connect seamlessly to the iOS application was a 
 We learned a lot about application development and also Twilio and the Python-Flask backend, as well as ways to connect frontend systems with backend systems. 
 
 
-### What's next for Echo MyHealth
+### What's next for Helderly
 We will attempt to create a database for the names entered into the application. Moreover, we can potentially experiment with paid versions of Twilio and increased amounts of phones. 
 
 
 ### Built With
 
-`swift` `Twilio`
+`Swift``iOS``Twilio``python``Flask``Rest API`
