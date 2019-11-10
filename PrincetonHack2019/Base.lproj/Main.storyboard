@@ -60,7 +60,7 @@
                                     <color key="titleShadowColor" red="0.80000000000000004" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ydE-iz-c51" kind="show" id="wia-ow-S1y"/>
+                                    <segue destination="ydE-iz-c51" kind="show" id="Z92-8J-w8K"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="aV8-Wc-eLX">
@@ -237,6 +237,9 @@
         <!--Emergency-->
         <scene sceneID="HtT-6h-cVX">
             <objects>
+                <exit id="rwR-5u-w7q" userLabel="Exit" sceneMemberID="exit"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="YPG-fI-rbo"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wz7-0X-UsN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController title="Emergency" id="ydE-iz-c51" customClass="ViewController" customModule="Helderly" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fA0-K9-KfK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -270,13 +273,11 @@
                         <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="Ol5-Dd-h1g"/>
                     </view>
+                    <navigationItem key="navigationItem" id="WN6-8v-Oos"/>
                     <connections>
                         <outlet property="longButton" destination="svD-BF-x1w" id="Y6u-nn-E6l"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wz7-0X-UsN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="rwR-5u-w7q" userLabel="Exit" sceneMemberID="exit"/>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="YPG-fI-rbo"/>
             </objects>
             <point key="canvasLocation" x="2238" y="115"/>
         </scene>

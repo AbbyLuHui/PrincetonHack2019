@@ -25,16 +25,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     var called:Bool = true;
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        //let location = locations[0]
         if let location = locations.last{
             let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-            let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+            let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.0001, longitudeDelta: 0.0001))
             map?.setRegion(region, animated: true)
             print("New location: \(location.coordinate) ")
             let latitude_diff = Double(location.coordinate.latitude) - ViewController.home_latitude
             let longitude_diff = Double(location.coordinate.longitude) - ViewController.home_latitude
             if (abs(latitude_diff) > 0.01 || abs(longitude_diff) > 0.01) && called{
-                self.alertFamily(domain: "text", input: ["phoneNumber":"Out of zone"], completion: printCompletion(input:))
+                let coordinate = String(location.coordinate.latitude).prefix(10)+","+String(location.coordinate.longitude).prefix(10)
+                self.alertFamily(domain: "text", input: ["coordinate":String(coordinate)], completion: printCompletion(input:))
                 called=false;
             }
             if abs(latitude_diff) < 0.01 || abs(longitude_diff) < 0.01 {
@@ -88,7 +88,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         let json = input
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
-            print(jsonData)
             let url = NSURL(string: "http://10.25.3.190:5000/\(domain)/")!
             
             let request = NSMutableURLRequest(url: url as URL)
@@ -124,12 +123,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         print("successfully send message / call with \(input)")
     }
     
+
     
 
-
-
-
-    //@IBOutlet weak var longButton: UIButton!
     //var longGesture = UILongPressGestureRecognizer()
     
     override func viewDidLoad() {
@@ -144,15 +140,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         location.allowsBackgroundLocationUpdates = true
         startAccelerometers()
         //longGesture = UILongPressGestureRecognizer(target: self, action: #selector(ViewController.longPress(_:)))
-        //longButton.addGestureRecognizer(longGesture)
+        //longPress.addGestureRecognizer(longGesture)
     }
     
-    //@IBAction func longPress(_ sender: UILongPressGestureRecognizer) {
-    //    let alertController = UIAlertController(title: "Emergency", message: "Emergency action dismissed", preferredStyle: .alert)
-      //  let ok = UIAlertAction(title: "OK", style: .default){(alert) in}
-        //alertController.addAction(ok)
-        //self.present(alertController, animated: true, completion: nil)
-    //}
+   // @IBAction func longPress(_ sender: UILongPressGestureRecognizer) {
+     //   let alertController = UIAlertController(title: "Emergency", message: "Emergency action dismissed", preferredStyle: .alert)
+       // let ok = UIAlertAction(title: "OK", style: .default){(alert) in}
+       // alertController.addAction(ok)
+      //  self.present(alertController, animated: true, completion: nil)
+   // }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

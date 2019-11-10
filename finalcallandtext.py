@@ -1,12 +1,18 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sat Nov  9 23:05:16 2019
+Created on Sun Nov 10 04:05:17 2019
 
 @author: jerry
 """
 
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Nov  9 23:05:16 2019
+@author: jerry
+"""
+
 import os
-from flask import Flask, request, redirect
+from flask import Flask
 from flask import jsonify
 from flask import render_template
 from flask import request
@@ -73,11 +79,11 @@ def outbound():
 class text(Resource):
     def post(self):
         # Get phone number we need to call
+        #phone_number = request.form.get('phoneNumber', None)
         coordinate = request.get_json()
-        phone_number = request.form.get('phoneNumber', None)
-        print(phone_number)
+        print(coordinate)
         phone_number = os.getenv("PHONE_NUMBER")
-        print(phone_number)
+
         try:
             twilio_client = Client(os.getenv("ACCOUNT_SID"),
                                    os.getenv("ACCOUNT_TOKEN"))
@@ -85,12 +91,17 @@ class text(Resource):
             msg = 'Missing configuration variable: {0}'.format(e)
             return jsonify({'error': msg})
 
+
         try:
       #      twilio_client.messages.create(body = "Relative out of range", from_= #os.getenv("TWILIO_PHONE"), to=phone_number,url=url_for('.incoming_sms',
          #   _external=True))
-             twilio_client.messages.create(body = "Relative out of range", from_= os.getenv("TWILIO_PHONE"), to=phone_number)
-             
+             twilio_client.messages.create( to=phone_number, from_= os.getenv("TWILIO_PHONE"), body = "Your family is out of zone.")
+             #twilio_client.messages.create(body =  ' %coordinate["coordinate"], from_= os.getenv("TWILIO_PHONE"), to=phone_number)
+             #twilio_client.messages.create(body = 'google.com', from_= os.getenv("TWILIO_PHONE"), to=phone_number)
+             #twilio_client.messages.create(body = '/?q=', from_= os.getenv("TWILIO_PHONE"), to=phone_number)
+             #twilio_client.messages.create(body = '%s' %coordinate["coordinate"],from_= os.getenv("TWILIO_PHONE"), to=phone_number)
              print("SENT")
+            
         except Exception as e:
             app.logger.error(e)
             return jsonify({'error': str(e)})
@@ -98,47 +109,11 @@ class text(Resource):
         return jsonify({'message': 'Message incoming!'})
 
 
-#def outbound():
- #   response = VoiceResponse()
-#
- ##          voice='alice')
-   # '''
-    # Uncomment this code and replace the number with the number you want
-    # your customers to call.
-  #  response.number("+16518675309")
-  #  '''
-  #  return str(response)
 
-#api.add_resource(call, '/call/')
-#@app.route('/sms', methods=['GET', 'POST'])
 
-class sms(Resource):
-    def sms():
-        """Send a dynamic reply to an incoming text message"""
-        # Get the message the user sent our Twilio number
-        body = request.values.get('Body', None)
-
-            # Start our TwiML response
-        resp = MessagingResponse()
-
-            # Determine the right reply for this message
-        if body == '1':
-            resp.message("Okay! we are calling your relative!!")
-            #call = client.calls.create(
-            #                url='http://demo.twilio.com/docs/voice.xml',
-            #                to=os.getenv("leElderly"),
-             #               from_=phone_number)
-            
-        elif body == '2':
-            resp.message("Here is the location of your relative!!")
-            #resp.message(str(location))
-
-        return str(resp)
 
 api.add_resource(call, '/call/')
 api.add_resource(text, '/text/')
-api.add_resource(sms, '/sms/')
-
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',debug=True, port=5000)
