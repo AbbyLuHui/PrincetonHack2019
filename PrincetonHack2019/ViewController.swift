@@ -123,10 +123,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         print("successfully send message / call with \(input)")
     }
     
+<<<<<<< HEAD
 
     
 
     //var longGesture = UILongPressGestureRecognizer()
+=======
+>>>>>>> 5049bab2ea8dc8a3f8381e6f29302b5accce523e
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -139,6 +142,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         location.startUpdatingLocation()
         location.allowsBackgroundLocationUpdates = true
         startAccelerometers()
+<<<<<<< HEAD
         //longGesture = UILongPressGestureRecognizer(target: self, action: #selector(ViewController.longPress(_:)))
         //longPress.addGestureRecognizer(longGesture)
     }
@@ -150,6 +154,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
       //  self.present(alertController, animated: true, completion: nil)
    // }
     
+=======
+
+    }
+
+>>>>>>> 5049bab2ea8dc8a3f8381e6f29302b5accce523e
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
