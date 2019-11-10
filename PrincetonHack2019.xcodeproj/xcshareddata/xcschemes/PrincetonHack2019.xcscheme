@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A530F0052376734600F0E7BB"
-               BuildableName = "PrincetonHack2019.app"
+               BuildableName = "Helderly.app"
                BlueprintName = "PrincetonHack2019"
                ReferencedContainer = "container:PrincetonHack2019.xcodeproj">
             </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A530F0052376734600F0E7BB"
-            BuildableName = "PrincetonHack2019.app"
+            BuildableName = "Helderly.app"
             BlueprintName = "PrincetonHack2019"
             ReferencedContainer = "container:PrincetonHack2019.xcodeproj">
          </BuildableReference>
@@ -82,7 +82,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A530F0052376734600F0E7BB"
-            BuildableName = "PrincetonHack2019.app"
+            BuildableName = "Helderly.app"
             BlueprintName = "PrincetonHack2019"
             ReferencedContainer = "container:PrincetonHack2019.xcodeproj">
          </BuildableReference>

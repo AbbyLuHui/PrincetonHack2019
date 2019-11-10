@@ -10,8 +10,12 @@ import UIKit
 import MapKit
 import CoreLocation
 import CoreMotion
+import Foundation
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
+    
+    
+    
     
     //MAP
     @IBOutlet weak var map: MKMapView!
@@ -19,24 +23,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     //location
     @IBOutlet weak var locationDisplay: UILabel!
     
-
-    @IBAction func longPressButton(_ sender: UIButton)
-    {
-        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressAction))
-        self.view.addGestureRecognizer(longPress)
-    }
-    
-    @objc func longPressAction(){
-        print("long press detected")
-        
-    }
-    
     let location = CLLocationManager()
     let motion = CMMotionManager()
     var accelerometerUpdateInterval: TimeInterval { 1 }
     static let home_latitude = 20.0;
     static let home_longitude = 20.0;
-
+    var inEmergency:Bool = false;
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         //let location = locations[0]
@@ -86,6 +78,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
        }
     }
     
+    
+    
     // If there is an emergency, call python backend
     private func alertFamily(domain: String, input:  [String:String], completion: @escaping(String) -> Void?) {
         let json = input
@@ -129,6 +123,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     
+
+
+
+
+    @IBOutlet weak var longButton: UIButton!
+    var longGesture = UILongPressGestureRecognizer()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -138,12 +139,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         location.startUpdatingLocation()
         location.allowsBackgroundLocationUpdates = true
         startAccelerometers()
+        longGesture = UILongPressGestureRecognizer(target: self, action: #selector(ViewController.longPress(_:)))
+        longButton.addGestureRecognizer(longGesture)
+    }
+    
+    @IBAction func longPress(_ sender: UILongPressGestureRecognizer) {
+        let alertController = UIAlertController(title:nil, message: "Emergency action dismissed", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default){(alert) in}
+        alertController.addAction(ok)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-
+    
+    
 }
-
