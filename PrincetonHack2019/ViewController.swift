@@ -19,9 +19,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     let location = CLLocationManager()
     let motion = CMMotionManager()
     var accelerometerUpdateInterval: TimeInterval { 1 }
-    static let home_latitude = 20.0;
-    static let home_longitude = 20.0;
+    static let home_latitude = 39.350165785922435;
+    static let home_longitude = -73.65276497931727;
     var inEmergency:Bool = false;
+    var called:Bool = true;
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         //let location = locations[0]
@@ -30,8 +31,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
             let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
             map?.setRegion(region, animated: true)
             print("New location: \(location.coordinate) ")
-            if Double(location.coordinate.latitude) - ViewController.home_latitude > 20 || Double(location.coordinate.longitude) - ViewController.home_latitude > 20{
-                self.alertFamily(domain: "location", input: ["phoneNumber":"Out of zone"], completion: printCompletion(input:))
+            let latitude_diff = Double(location.coordinate.latitude) - ViewController.home_latitude
+            let longitude_diff = Double(location.coordinate.longitude) - ViewController.home_latitude
+            if (abs(latitude_diff) > 0.01 || abs(longitude_diff) > 0.01) && called{
+                self.alertFamily(domain: "text", input: ["phoneNumber":"Out of zone"], completion: printCompletion(input:))
+                called=false;
+            }
+            if abs(latitude_diff) < 0.01 || abs(longitude_diff) < 0.01 {
+                called=true;
             }
         }
     }
@@ -66,9 +73,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
                 let x = trueData.acceleration.x
                 let y = trueData.acceleration.y
                 let z = trueData.acceleration.z
-                //print(x)
-                //print(y)
-                //print(z)
+                if abs(x)>3 || abs(y)>3 || abs(z)>3{
+                    self.alertFamily(domain: "call", input: ["phoneNumber":"Out of zone"], completion: self.printCompletion(input:))
+                }
             }
         }
        }
@@ -82,7 +89,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
             print(jsonData)
-            let url = NSURL(string: "http://10.25.3.190/\(domain)/")!
+            let url = NSURL(string: "http://10.25.3.190:5000/\(domain)/")!
             
             let request = NSMutableURLRequest(url: url as URL)
             request.httpMethod = "POST"
