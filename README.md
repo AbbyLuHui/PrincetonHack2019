@@ -1,6 +1,6 @@
 # Helderly
 
-Team: Abby Lu (@AbbyLuHui), Sara Zhao (@gnayiyoahz) , Jerry Zhuang (@JerryZhuang8), Ryan Chen (@ryanywchen)
+Team: Abby Lu (@AbbyLuHui), Sara Zhao (@gnayiyoahz), Jerry Zhuang (@JerryZhuang8), Ryan Chen (@ryanywchen)
 
 ### Inspiration
 
@@ -58,4 +58,4 @@ We will attempt to create a database for the names entered into the application.
 
 ### Built With
 
-`Swift``iOS``Twilio``python``Flask``Rest API`
+`Swift` `iOS` `Twilio` `python` `Flask` `Rest API`
