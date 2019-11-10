@@ -14,7 +14,6 @@ This App aims to provide more timely help to the elderly, especially those with 
 
 
 ![edit](fig/profile_edit.png)
-
 ![display](fig/profile_display.png)
 
 1) Falling
@@ -23,7 +22,6 @@ This App aims to provide more timely help to the elderly, especially those with 
 If he/she does not stand up or long-press the button within 1 minute, a message will be sent to the emergency contact and 911 will be dialed. Otherwise, the action will be cancelled.
 
 ![emergency](fig/emergency.png) 
-
 ![cancel](fig/cancel.png) 
 
 2) Getting lost
@@ -34,7 +32,7 @@ Whenever an emergency ocurrs, the elderly user's app shows his personal informat
 
 Besides, the real-time location of the user is readily available on the interface, in case the user has any difficulty locating him/herself.
 
-![map](figs/map.png)
+![map](fig/map.png)
 
 
 
