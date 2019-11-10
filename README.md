@@ -1,6 +1,6 @@
 # Helderly
 
-Team: Abby Lu (@AbbyLuHui), Sara Zhao (@gnayiyoahz) , Jerry Zhuang (@JerryZhuang8), Ryan Chen (@ryanywchen)
+Team: Abby Lu (@AbbyLuHui), Sara Zhao (@gnayiyoahz), Jerry Zhuang (@JerryZhuang8), Ryan Chen (@ryanywchen)
 
 ### Inspiration
 
@@ -10,27 +10,37 @@ Therefore, we hope to build an app that improves this situation and establishes 
 
 ### What it does
 
-This App aims to provide more timely help to the elderly, especially those with dementia. When an elder person encourters emergency situations, namely 1) **falling** and 2) **getting lost**, their family members will be alerted through text messages using the Twilio API.
+This App aims to provide more timely help to the elderly, especially those with dementia. When an elder person encounters emergency situations, namely 1) **falling** and 2) **getting lost**, their family members will be alerted through text messages and phone calls using the Twilio API.
+
+
+![edit](fig/profile_edit.png)
+![display](fig/profile_display.png)
 
 1) Falling
 
-​	When the person falls, the app detects it through the phone's gravity sensor and shows an emergency page. [Insert figure] If he/she does not stand up or long-press the button within 1 minute, a message will be sent to the emergency contact and 911 will be dialed. 
+​	When the person falls, the app detects it through the phone's gravity sensor and shows an emergency page. 
+If he/she does not stand up or long-press the button within 1 minute, a message will be sent to the emergency contact and 911 will be dialed. Otherwise, the action will be cancelled.
+
+![emergency](fig/emergency.png) 
+![cancel](fig/cancel.png) 
 
 2) Getting lost
 
 ​	When setting up the account, an address (location coordinates) and a "safety range" will be entered into the app. If the person goes out of the safety range (e.g. 10 blocks from home address), the emergency contact will be alerted via text message.
 
-Whenever an emergency ocurrs, the elderly user's app shows his personal information including 1) name, 2) Age, 3) Contact and 4) Condition, so that the emergency medical services (EMS) personels can learn about the situation even if the elder user is unable to explain it clearly.
+Whenever an emergency ocurrs, the elderly user's app shows his personal information including 1) name, 2) Age, 3) Contact and 4) Condition, so that the emergency medical services (EMS) personnel can learn about the situation even if the elderly user is unable to explain it clearly.
 
+Besides, the real-time location of the user is readily available on the interface, in case the user has any difficulty locating him/herself.
 
+![map](fig/map.png)
 
 
 
 ### How we built it
-We used Swift to design the iOS application. Moreover, we had a Python-Flask backend that used Twilio to establish communications such as text messages and phone calls. The justification for using a Python-Flask backend is that this backend can store information in a database more efficiently. The Swift application is connected to a GPS locator and a accelerometer to detect changes in location and falls, respectively. When a fall is detected by Swift, Swift sends a request to the Python-Flask backend, which then calls the emergency contact through Twilio. When a GPS location change beyond the boundary is detected, Swift sends a request to the Python-Swift backend which then texts the location of the eldery person to the emergency contact through Twilio. 
+We used Swift to design the iOS application. Moreover, we had a Python-Flask backend that used Twilio to establish communications such as text messages and phone calls. The justification for using a Python-Flask backend is that this backend can store information in a database more efficiently. The Swift application is connected to a GPS locator and an accelerometer to detect changes in location and falls, respectively. When a fall is detected by Swift, Swift sends a request to the Python-Flask backend, which then calls the emergency contact through Twilio. When a GPS location change beyond the boundary is detected, Swift sends a request to the Python-Swift backend which then texts the location of the elderly person to the emergency contact through Twilio. 
 
 
-### Challenges we ran into
+### Challenges we ran int
 The Python-Flask backend and the Swift frontend were difficult to connect together, as the ports oftentimes did not work. Ultimately, we resolved this issue. A few buttons on the Swift frontend application also was difficult to optimize. Moreover, texts involving a non-shortened Google Maps URL sometimes did not send successfully through Twilio for unknown reasons. We tried our best to fix it, but it appears to still send inconsistently. 
 
 
@@ -48,4 +58,4 @@ We will attempt to create a database for the names entered into the application.
 
 ### Built With
 
-`Swift``iOS``Twilio``python``Flask``Rest API`
+`Swift` `iOS` `Twilio` `python` `Flask` `Rest API`
