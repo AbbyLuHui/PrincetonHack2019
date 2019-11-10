@@ -25,16 +25,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     var called:Bool = true;
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        //let location = locations[0]
         if let location = locations.last{
             let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-            let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+            let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.0001, longitudeDelta: 0.0001))
             map?.setRegion(region, animated: true)
             print("New location: \(location.coordinate) ")
             let latitude_diff = Double(location.coordinate.latitude) - ViewController.home_latitude
             let longitude_diff = Double(location.coordinate.longitude) - ViewController.home_latitude
             if (abs(latitude_diff) > 0.01 || abs(longitude_diff) > 0.01) && called{
-                self.alertFamily(domain: "text", input: ["phoneNumber":"Out of zone"], completion: printCompletion(input:))
+                //let coordinate = String(location.coordinate.latitude).prefix(10)+","+String(location.coordinate.longitude).prefix(10)
+                self.alertFamily(domain: "text", input: ["latitude":String(location.coordinate.latitude), "longitude":String(location.coordinate.longitude)], completion: printCompletion(input:))
                 called=false;
             }
             if abs(latitude_diff) < 0.01 || abs(longitude_diff) < 0.01 {
@@ -63,10 +63,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
       location.desiredAccuracy = accuracyValues[sender.selectedSegmentIndex];
     }
     
+
     func startAccelerometers() {
        // Make sure the accelerometer hardware is available.
        if self.motion.isAccelerometerAvailable {
-        self.motion.accelerometerUpdateInterval = 1.0 / 60.0  // 60 Hz
+        self.motion.accelerometerUpdateInterval = 1.0/20.0   // 60 Hz
         self.motion.startAccelerometerUpdates(to: OperationQueue.current!){(data, error) in
             if let trueData = data{
                 self.view.reloadInputViews()
@@ -89,7 +90,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         let json = input
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
-            print(jsonData)
             let url = NSURL(string: "http://10.25.3.190:5000/\(domain)/")!
             
             let request = NSMutableURLRequest(url: url as URL)
@@ -108,8 +108,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
                     let result = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String:AnyObject]
                     print ("Result -> \(String(describing: result))")
                     
-                    // retrieving video from firebase and showing on screen
-                    
                     completion("Result -> \(String(describing: result))")
                 } catch {
                     completion("Error2 -> \(error)")
@@ -125,6 +123,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         print("successfully send message / call with \(input)")
     }
     
+
     
     @objc func emergency() {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -144,9 +143,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         location.startUpdatingLocation()
         location.allowsBackgroundLocationUpdates = true
         startAccelerometers()
-
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

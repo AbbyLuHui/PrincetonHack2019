@@ -23,7 +23,7 @@ from dotenv import load_dotenv
 
 from twilio.twiml.voice_response import VoiceResponse
 from twilio.rest import Client
-
+#Authorization: Bearer {9ddc22af9ec498f4777b3d9da517e62c09eb7384}
 # Declare and configure application
 app = Flask(__name__)
 api = Api(app)
@@ -79,10 +79,8 @@ def outbound():
 class text(Resource):
     def post(self):
         # Get phone number we need to call
-        phone_number = request.form.get('phoneNumber', None)
-        print(phone_number)
+        coordinate = request.get_json()
         phone_number = os.getenv("PHONE_NUMBER")
-        print(phone_number)
         try:
             twilio_client = Client(os.getenv("ACCOUNT_SID"),
                                    os.getenv("ACCOUNT_TOKEN"))
@@ -94,7 +92,8 @@ class text(Resource):
       #      twilio_client.messages.create(body = "Relative out of range", from_= #os.getenv("TWILIO_PHONE"), to=phone_number,url=url_for('.incoming_sms',
          #   _external=True))
              twilio_client.messages.create(body = "Relative out of range at the following location:", from_= os.getenv("TWILIO_PHONE"), to=phone_number)
-             twilio_client.messages.create(body = "http://maps.google.com/maps=?q=" + str(x) +"," + str(y), from_= os.getenv("TWILIO_PHONE"), to=phone_number)
+             twilio_client.messages.create(body = "maps.google.com/maps=?q= %d, %d" %(int(coordinate[latitude]),int(coordinate[longitude])), from_= os.getenv("TWILIO_PHONE"), to=phone_number)
+             twilio_client.messages.create(body = "maps.google.com/maps=?q= %d, %d" %(int(coordinate[latitude]),int(coordinate[longitude])), from_= os.getenv("TWILIO_PHONE"), to=phone_number)
 
              
              print("SENT")
