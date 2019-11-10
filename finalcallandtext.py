@@ -63,7 +63,7 @@ class call(Resource):
 def outbound():
     response = VoiceResponse()
 
-    response.say("your relative is in trouble.",
+    response.say("Alert from Helderly: relative is in trouble.",
             voice='alice')
     '''
     # Uncomment this code and replace the number with the number you want
@@ -91,10 +91,10 @@ class text(Resource):
         try:
       #      twilio_client.messages.create(body = "Relative out of range", from_= #os.getenv("TWILIO_PHONE"), to=phone_number,url=url_for('.incoming_sms',
          #   _external=True))
-             twilio_client.messages.create(body = "Use Google Maps. Relative out of range at the following location: %s, %s" %(coordinate["latitude"][0:8],coordinate["longitude"][0:8]),from_= os.getenv("TWILIO_PHONE"), to=phone_number)
+             twilio_client.messages.create(body = "ALERT FROM HELDERLY. Relative out of range at the following location: %s, %s" %(coordinate["latitude"][0:8],coordinate["longitude"][0:8]),from_= os.getenv("TWILIO_PHONE"), to=phone_number)
             # twilio_client.messages.create(body = "google.com/maps?q=%s,%s" %(coordinate["latitude"][0:4],coordinate["longitude"][0:4]), from_= os.getenv("TWILIO_PHONE"), to=phone_number)
             # twilio_client.messages.create(body = "coordinates:%s%s" %(coordinate["latitude"][0:8],coordinate["longitude"][0:8]), from_= os.getenv("TWILIO_PHONE"), to=phone_number)
-
+             twilio_client.messages.create(body = "Use https://maps.google.com to enter in the coordinates.", from_= os.getenv("TWILIO_PHONE"), to=phone_number)
              
              print("SENT")
         except Exception as e:
