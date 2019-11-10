@@ -4,7 +4,7 @@ Team: Abby Lu (@AbbyLuHui), Sara Zhao (@gnayiyoahz) , Jerry Zhuang (@JerryZhuang
 
 ### Inspiration
 
-According to the US Census Bereau, the elderly population—persons 65 years or older—numbered 52 million in 2018, and approximately 5.6 million are living with Alzheimer's disease in 2019. However, since they are less tech-savvy and might face problems updating their family of their situation, they could not receive timely assistance. 
+According to the US Census Bereau, the elderly population—persons 65 years or older—numbered 52 million in 2018, and approximately 5.6 million are living with Alzheimer's disease in 2019. However, since they are less tech-savvy and might face problems updating their family of their situation, they often cannot receive timely assistance. 
 
 Therefore, we hope to build an app that improves this situation and establishes a better communication system between the elderly and their family in case of emergency.
 
