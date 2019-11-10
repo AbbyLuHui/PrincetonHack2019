@@ -132,6 +132,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     }
     
     
+    @IBOutlet weak var brb: UIButton!
+    @IBOutlet weak var fam: UIButton!
+    
+    @IBAction func activeContact(_ sender: UIButton) {
+        self.alertFamily(domain: "call", input: ["phoneNumber":"Out of zone"], completion: self.printCompletion(input:))
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

@@ -8,8 +8,6 @@
 
 import UIKit
 
-// var buttonPressed = true
-
 class ButtonViewController: UIViewController {
 
     @IBOutlet weak var longButton: UIButton!
@@ -17,13 +15,9 @@ class ButtonViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        longGesture = UILongPressGestureRecognizer(target: self, action: #selector(ButtonViewController.longPress(_:)))
+        longGesture = UILongPressGestureRecognizer(target: self, action: #selector(self.longPress(_:)))
         longButton.addGestureRecognizer(longGesture)
         
-/*
-        let timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.longPress(_:)), userInfo: nil, repeats: true)
-        timer.tolerance = 10
- */
     }
     
     @IBAction func longPress(_ sender: UILongPressGestureRecognizer) {
@@ -37,11 +31,6 @@ class ButtonViewController: UIViewController {
             alertC.addAction(ok)
             self.present(alertC, animated: true, completion: nil)
         }
-/*
-        else {
-            buttonPressed = false
-        }
- */
     }
     
     func GoTo(){
