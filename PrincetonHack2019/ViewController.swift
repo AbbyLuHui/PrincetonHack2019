@@ -12,16 +12,9 @@ import CoreLocation
 import CoreMotion
 import Foundation
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
-    
-    
-    
-    
+class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     //MAP
-    @IBOutlet weak var map: MKMapView!
-    
-    //location
-    @IBOutlet weak var locationDisplay: UILabel!
+    @IBOutlet weak var map: MKMapView?
     
     let location = CLLocationManager()
     let motion = CMMotionManager()
@@ -33,6 +26,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         //let location = locations[0]
         if let location = locations.last{
+            let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+            let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+            map?.setRegion(region, animated: true)
             print("New location: \(location.coordinate) ")
             if Double(location.coordinate.latitude) - ViewController.home_latitude > 20 || Double(location.coordinate.longitude) - ViewController.home_latitude > 20{
                 self.alertFamily(domain: "location", input: ["phoneNumber":"Out of zone"], completion: printCompletion(input:))
@@ -118,7 +114,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     private func printCompletion(input: String) {
-        print("successfully got message from backend: \(input)")
+        print("successfully send message / call with \(input)")
     }
     
     
@@ -126,28 +122,30 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
 
 
-    @IBOutlet weak var longButton: UIButton!
-    var longGesture = UILongPressGestureRecognizer()
+    //@IBOutlet weak var longButton: UIButton!
+    //var longGesture = UILongPressGestureRecognizer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        map?.delegate = self
+        map?.showsUserLocation = true
         location.delegate = self
         location.desiredAccuracy = kCLLocationAccuracyBest
         location.requestAlwaysAuthorization()
         location.startUpdatingLocation()
         location.allowsBackgroundLocationUpdates = true
         startAccelerometers()
-        longGesture = UILongPressGestureRecognizer(target: self, action: #selector(ViewController.longPress(_:)))
-        longButton.addGestureRecognizer(longGesture)
+        //longGesture = UILongPressGestureRecognizer(target: self, action: #selector(ViewController.longPress(_:)))
+        //longButton.addGestureRecognizer(longGesture)
     }
     
-    @IBAction func longPress(_ sender: UILongPressGestureRecognizer) {
-        let alertController = UIAlertController(title:nil, message: "Emergency action dismissed", preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .default){(alert) in}
-        alertController.addAction(ok)
-        self.present(alertController, animated: true, completion: nil)
-    }
+    //@IBAction func longPress(_ sender: UILongPressGestureRecognizer) {
+    //    let alertController = UIAlertController(title: "Emergency", message: "Emergency action dismissed", preferredStyle: .alert)
+      //  let ok = UIAlertAction(title: "OK", style: .default){(alert) in}
+        //alertController.addAction(ok)
+        //self.present(alertController, animated: true, completion: nil)
+    //}
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
