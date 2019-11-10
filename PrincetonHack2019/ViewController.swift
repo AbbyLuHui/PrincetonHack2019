@@ -118,13 +118,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     }
     
     
-
-
-
-
-    //@IBOutlet weak var longButton: UIButton!
-    //var longGesture = UILongPressGestureRecognizer()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -136,17 +129,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         location.startUpdatingLocation()
         location.allowsBackgroundLocationUpdates = true
         startAccelerometers()
-        //longGesture = UILongPressGestureRecognizer(target: self, action: #selector(ViewController.longPress(_:)))
-        //longButton.addGestureRecognizer(longGesture)
+
     }
-    
-    //@IBAction func longPress(_ sender: UILongPressGestureRecognizer) {
-    //    let alertController = UIAlertController(title: "Emergency", message: "Emergency action dismissed", preferredStyle: .alert)
-      //  let ok = UIAlertAction(title: "OK", style: .default){(alert) in}
-        //alertController.addAction(ok)
-        //self.present(alertController, animated: true, completion: nil)
-    //}
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
