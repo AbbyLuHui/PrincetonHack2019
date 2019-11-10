@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Nov  9 23:05:16 2019
+
+@author: jerry
+"""
+
 import os
 from flask import Flask
 from flask import jsonify
@@ -60,6 +67,40 @@ def outbound():
     return str(response)
 
 api.add_resource(Location, '/location/')
+
+
+@app.route('/text', methods=['POST'])
+def text(): 
+    message = client.messages.create(
+                     body="Hi, it appears that your elderly has travelled outside the radius.",
+                     from_='os.getenv("TWILIO PHONE")',
+                     to='You already know what it is!!!'
+                 )
+  
+
+@app.route("/sms", methods=['GET', 'POST'])
+def incoming_sms():
+    """Send a dynamic reply to an incoming text message"""
+    # Get the message the user sent our Twilio number
+    body = request.values.get('Body', None)
+
+    # Start our TwiML response
+    resp = MessagingResponse()
+
+    # Determine the right reply for this message
+    if body == '1':
+        resp.message("Okay! we are calling your relative!!")
+        call = client.calls.create(
+                        url='http://demo.twilio.com/docs/voice.xml',
+                        to='os.getenv("leElderly"),
+                        from_='os.getenv("yourNumb")'
+    )
+    elif body == '2':
+        resp.message("Here is the location of your relative!!")
+        resp.message(str(location))
+
+    return str(resp)
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',debug=True, port=80)
