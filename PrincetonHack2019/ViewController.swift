@@ -34,7 +34,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         if let location = locations.last{
             print("New location: \(location.coordinate) ")
             if Double(location.coordinate.latitude) - ViewController.home_latitude > 20 || Double(location.coordinate.longitude) - ViewController.home_latitude > 20{
-                self.alertFamily(domain: "login", input: ["emergency":"Out of zone"], completion: printCompletion(input:))
+                self.alertFamily(domain: "location", input: ["phoneNumber":"Out of zone"], completion: printCompletion(input:))
             }
         }
     }
@@ -81,24 +81,24 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     private func alertFamily(domain: String, input:  [String:String], completion: @escaping(String) -> Void?) {
         let json = input
         do {
-            print(json)
             let jsonData = try JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
-            
-            let url = NSURL(string: "http://127.0.0.1:5000/\(domain)/")!
+            print(jsonData)
+            let url = NSURL(string: "http://10.25.3.190/location/")!
             
             let request = NSMutableURLRequest(url: url as URL)
             request.httpMethod = "POST"
             
             request.setValue("application/json; charset=utf-8",forHTTPHeaderField: "Content-Type")
             request.httpBody = jsonData
-            
+            print(String(describing: jsonData))
      
             let task = URLSession.shared.dataTask(with: request as URLRequest){ data, response, error in
                 if error != nil{
-                    print("Error -> \(String(describing: error))")
+                    print("Error1 -> \(String(describing: error))")
                     return
                 }
                 do {
+                    print("HERE")
                     let result = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String:AnyObject]
                     print ("Result -> \(String(describing: result))")
                     
@@ -106,7 +106,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                     
                     completion("Result -> \(String(describing: result))")
                 } catch {
-                    completion("Error -> \(error)")
+                    completion("Error2 -> \(error)")
                 }
             }
             task.resume()

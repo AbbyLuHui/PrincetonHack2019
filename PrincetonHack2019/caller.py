@@ -14,23 +14,24 @@ app = Flask(__name__)
 # Route for Click to Call demo page.
 
 # Voice Request URL
-@app.route('/', methods=['POST'])
-def call():
+@app.route('/location/', methods=['POST'])
+def location():
     # Get phone number we need to call
     phone_number = request.form.get('phoneNumber', None)
-
+    print(phone_number)
+    phone_number = '+19294338832'
     try:
-        twilio_client = Client(app.config['TWILIO_ACCOUNT_SID'],
-                               app.config['TWILIO_AUTH_TOKEN'])
+        twilio_client = Client(app.config['AC102092b89629bd04c1bb77a847531075'],
+                               app.config['7ea5fc7a1042bc5881104a1c6ace0e6b'])
     except Exception as e:
         msg = 'Missing configuration variable: {0}'.format(e)
         return jsonify({'error': msg})
 
     try:
-        twilio_client.calls.create(from_=app.config['TWILIO_CALLER_ID'],
-                                   to=phone_number,
-                                   url=url_for('.outbound',
-                                               _external=True))
+        print("Trying")
+        twilio_client.calls.create(url=url_for('.outbound', _external=True),to=phone_number, from_=app.config['+12562696834']
+                                   )
+        print("SENT")
     except Exception as e:
         app.logger.error(e)
         return jsonify({'error': str(e)})
@@ -53,4 +54,4 @@ def outbound():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
