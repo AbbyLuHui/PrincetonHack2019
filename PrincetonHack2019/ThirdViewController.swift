@@ -9,11 +9,7 @@
 import UIKit
 import Foundation
 
-var name = ""
-var age = ""
-var contact = ""
-var condition = ""
-
+ 
 class ThirdViewController: UIViewController {
 
     @IBOutlet weak var nameField: UITextField!

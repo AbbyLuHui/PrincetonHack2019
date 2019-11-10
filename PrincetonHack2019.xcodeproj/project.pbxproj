@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7AE2695D2377FBFD001625B0 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE2695C2377FBFD001625B0 /* SecondViewController.swift */; };
 		7AE2695F237803B5001625B0 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE2695E237803B5001625B0 /* ThirdViewController.swift */; };
+		7AE2696123781C24001625B0 /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE2696023781C24001625B0 /* ButtonViewController.swift */; };
 		A530F00A2376734600F0E7BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A530F0092376734600F0E7BB /* AppDelegate.swift */; };
 		A530F00C2376734600F0E7BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A530F00B2376734600F0E7BB /* SceneDelegate.swift */; };
 		A530F00E2376734600F0E7BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A530F00D2376734600F0E7BB /* ViewController.swift */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		7AE2695C2377FBFD001625B0 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		7AE2695E237803B5001625B0 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		7AE2696023781C24001625B0 /* ButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewController.swift; sourceTree = "<group>"; };
 		A530F0062376734600F0E7BB /* Helderly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Helderly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A530F0092376734600F0E7BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A530F00B2376734600F0E7BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				A530F00D2376734600F0E7BB /* ViewController.swift */,
 				7AE2695C2377FBFD001625B0 /* SecondViewController.swift */,
 				7AE2695E237803B5001625B0 /* ThirdViewController.swift */,
+				7AE2696023781C24001625B0 /* ButtonViewController.swift */,
 				A530F0152376735200F0E7BB /* Assets.xcassets */,
 				A530F0172376735200F0E7BB /* LaunchScreen.storyboard */,
 				A530F01A2376735200F0E7BB /* Info.plist */,
@@ -281,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A530F00E2376734600F0E7BB /* ViewController.swift in Sources */,
+				7AE2696123781C24001625B0 /* ButtonViewController.swift in Sources */,
 				A530F00A2376734600F0E7BB /* AppDelegate.swift in Sources */,
 				A530F00C2376734600F0E7BB /* SceneDelegate.swift in Sources */,
 				7AE2695D2377FBFD001625B0 /* SecondViewController.swift in Sources */,

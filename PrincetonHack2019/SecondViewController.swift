@@ -9,6 +9,12 @@
 import UIKit
 import Foundation
 
+
+var name = "Name"
+var age = "Age"
+var contact = "Contact"
+var condition = "Condition(s)"
+
 class SecondViewController: UIViewController {
 
     
@@ -23,6 +29,8 @@ class SecondViewController: UIViewController {
 //    var myAge = String()
 //    var myContact = String()
 //    var myCondition = String()
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
