@@ -11,13 +11,20 @@ Therefore, we hope to build an app that improves this situation and establishes 
 ### What it does
 
 This App aims to provide more timely help to the elderly, especially those with dementia. When an elder person encourters emergency situations, namely 1) **falling** and 2) **getting lost**, their family members will be alerted through text messages using the Twilio API.
-![pre](fig/profile_pre.png)
+
+
 ![edit](fig/profile_edit.png)
+
 ![display](fig/profile_display.png)
 
 1) Falling
 
-​	When the person falls, the app detects it through the phone's gravity sensor and shows an emergency page. ![emergency](fig/emergency.png) If he/she does not stand up or long-press the button within 1 minute, a message will be sent to the emergency contact and 911 will be dialed. Else, it will be dismissed ![cancel](fig/cancel.png) 
+​	When the person falls, the app detects it through the phone's gravity sensor and shows an emergency page. 
+If he/she does not stand up or long-press the button within 1 minute, a message will be sent to the emergency contact and 911 will be dialed. Otherwise, the action will be cancelled.
+
+![emergency](fig/emergency.png) 
+
+![cancel](fig/cancel.png) 
 
 2) Getting lost
 
@@ -26,6 +33,7 @@ This App aims to provide more timely help to the elderly, especially those with 
 Whenever an emergency ocurrs, the elderly user's app shows his personal information including 1) name, 2) Age, 3) Contact and 4) Condition, so that the emergency medical services (EMS) personels can learn about the situation even if the elder user is unable to explain it clearly.
 
 Besides, the real-time location of the user is readily available on the interface, in case the user has any difficulty locating him/herself.
+
 ![map](figs/map.png)
 
 
