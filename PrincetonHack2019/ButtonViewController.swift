@@ -24,12 +24,20 @@ class ButtonViewController: UIViewController {
     @IBAction func longPress(_ sender: UILongPressGestureRecognizer) {
         if sender.state == .began
         {
+            
+            // alert
             let alertC = UIAlertController(title:nil, message: "Emergency action cancelled", preferredStyle: .alert)
-            let ok = UIAlertAction(title: "OK", style: .default){(alert) in}
+            // also back to main
+            let ok = UIAlertAction(title: "OK", style: .default, handler: {action in self.GoTo()})
             alertC.addAction(ok)
             self.present(alertC, animated: true, completion: nil)
-
         }
+    }
+    
+    func GoTo(){
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let goTo = storyBoard.instantiateViewController(withIdentifier: "Intro")
+        self.present(goTo, animated: true, completion: nil)
     }
 
 

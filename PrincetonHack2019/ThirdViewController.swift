@@ -44,26 +44,29 @@ class ThirdViewController: UIViewController {
         secondController.myCondition = conditionField.text!
     }
 */
-    
-    
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        nameField.delegate = self
+        ageField.delegate = self
+        contactField.delegate = self
+        conditionField.delegate = self
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        nameField.resignFirstResponder()
+        ageField.resignFirstResponder()
+        contactField.resignFirstResponder()
+        conditionField.resignFirstResponder()
     }
-    */
+}
 
+extension ThirdViewController : UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }

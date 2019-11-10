@@ -75,6 +75,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
                 let z = trueData.acceleration.z
                 if abs(x)>3 || abs(y)>3 || abs(z)>3{
                     self.alertFamily(domain: "call", input: ["phoneNumber":"Out of zone"], completion: self.printCompletion(input:))
+                    self.emergency()
                 }
             }
         }
@@ -84,7 +85,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     
     
     // If there is an emergency, call python backend
-    private func alertFamily(domain: String, input:  [String:String], completion: @escaping(String) -> Void?) {
+    func alertFamily(domain: String, input:  [String:String], completion: @escaping(String) -> Void?) {
         let json = input
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
@@ -122,6 +123,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     
     private func printCompletion(input: String) {
         print("successfully send message / call with \(input)")
+    }
+    
+    
+    @objc func emergency() {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let goTo = storyBoard.instantiateViewController(withIdentifier: "Button")
+        self.present(goTo, animated: true, completion: nil)
     }
     
     
